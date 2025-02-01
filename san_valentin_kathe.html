@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz San Valentín!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .buttons {
+      margin-top: 1rem;
+    }
+
+    button {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff3b3b;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #surprise {
+      margin-top: 2rem;
+    }
+
+    .hearts-flowers {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hola Kathe, mi amor 💖</h1>
+    <p>Quiero preguntarte algo importante... ¿Quieres ser mi San Valentín? 🌹</p>
+    <div class="buttons">
+      <button id="yesButton">Sí, ¡por supuesto! 🌟</button>
+      <button id="noButton">No (pero eso no es opción 😜)</button>
+    </div>
+    <div id="surprise" class="hidden">
+      <h2>🌺 Cancela todo para ese fin de semana, yo resuelvo 💕</h2>
+      <div class="hearts-flowers"></div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('yesButton').addEventListener('click', function() {
+      const surprise = document.getElementById('surprise');
+      surprise.classList.remove('hidden');
+      const hearts = document.createElement('div');
+      hearts.innerHTML = '💖🌺💖🌸💖';
+      document.querySelector('.hearts-flowers').appendChild(hearts);
+    });
+
+    document.getElementById('noButton').addEventListener('mouseover', function() {
+      this.style.position = 'absolute';
+      this.style.top = Math.random() * 80 + '%';
+      this.style.left = Math.random() * 80 + '%';
+    });
+  </script>
+</body>
+</html>
